@@ -92,6 +92,7 @@
         <p id="response"></p>
     </section>
     <script>
+        // FAQ toggle functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
@@ -99,20 +100,19 @@
             });
         });
 
+        // Room booking form submission
         document.getElementById('roomBookingForm').addEventListener('submit', async (e) => {
             e.preventDefault();
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const room = document.getElementById('room').value;
 
-            const response = await fetch('/book-room', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, room }),
-            });
-            const result = await response.json();
-            document.getElementById('response').textContent = result.message;
-        });
-    </script>
-</body>
-</html>
+            try {
+                const response = await fetch('/book-room', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, room }),
+                });
+                const result = await response.json();
+ 
