@@ -10,3 +10,14 @@ JavaScript: For adding interactivity, such as FAQ toggling and form validation.
 Node.js & Express: For creating a lightweight and efficient back-end to process room booking requests.
 Challenges: Integrating front-end and back-end functionality. Ensuring real-time room booking validations.
 Future Enhancements: Implement persistent storage (e.g., a database) for bookings. Add authentication for user accounts. Enhance the UI with advanced styling and animations.
+
+How to Use the Project
+FAQ Section
+Click on a question to reveal the answer.
+Click again to hide the answer.
+Room Booking Form
+Fill in your name, email, and select a room from the dropdown.
+Submit the form to book the room.
+The server will respond:
+Success: If the room is available.
+Error: If the room is already booked.
